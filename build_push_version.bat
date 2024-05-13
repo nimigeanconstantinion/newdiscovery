@@ -7,19 +7,19 @@ if not defined SERVICE_VERSION (
 )
 
 echo Building Docker image...
-docker build -f Dockerfile -t discovery-service:%SERVICE_VERSION% .
+docker build -f Dockerfile -t new-discovery-service:%SERVICE_VERSION% .
 
 echo Getting the new image ID...
 setlocal enabledelayedexpansion
-for /f "tokens=*" %%i in ('docker images -q discovery-service:%SERVICE_VERSION%') do set IMAGE_ID=%%i
+for /f "tokens=*" %%i in ('docker images -q new-discovery-service:%SERVICE_VERSION%') do set IMAGE_ID=%%i
 echo New image ID: !IMAGE_ID!
 endlocal
 
 echo Tagging the image...
-docker tag discovery-service:%SERVICE_VERSION%  ion21/discovery-service:%SERVICE_VERSION%
+docker tag new-discovery-service:%SERVICE_VERSION%  ion21/new-discovery-service:%SERVICE_VERSION%
 
 echo Pushing the tagged image...
-docker push  ion21/discovery-service:%SERVICE_VERSION%
+docker push  ion21/new-discovery-service:%SERVICE_VERSION%
 
 echo Script completed.
 pause

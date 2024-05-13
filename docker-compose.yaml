@@ -7,7 +7,7 @@ networks:
 services:
 
   discovery-service:
-    image: ion21/new-discovery-service:v2
+    image: ion21/newdiscovery:v2
     networks:
       - mynet
     ports:
