@@ -7,13 +7,13 @@ networks:
 services:
 
   discovery-service:
-    image: ion21/newdiscovery:v2
+    image: ion21/newdiscovery:latest
     networks:
       - mynet
     ports:
       - "8761:8761"
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
+#    environment:
+#      SPRING_PROFILES_ACTIVE: docker
 #
 #      SPRING_APPLICATION_NAME: query
 #      APPLICATION_JWT_SECRETKEY: asdasdasdasdasd123344asdasdasdasdasasd12321332sadas
