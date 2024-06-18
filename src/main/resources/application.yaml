@@ -2,11 +2,16 @@ server:
   port: 8761
 
 spring:
-  zipkin:
-    base-url: http://zipkin:9411
 
-eureka:
+
+  cloud:
+    compatibility-verifier:
+      enabled=false:eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
 
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0
